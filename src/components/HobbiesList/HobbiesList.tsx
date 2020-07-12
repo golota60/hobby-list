@@ -23,8 +23,8 @@ const HobbiesList = ({
   setHobby,
 }: HobbiesListInterface) => {
   return (
-    <div className={`hobby-list__column ${className}`} style={style}>
-      <span className="hobby-list__column-buttonContainer">
+    <div className={`hobby-list__hobbiesForm ${className}`} style={style}>
+      <span className="hobby-list__hobbiesForm-inputs">
         <TextInput
           placeholder="Select passion level"
           value={hobby.passion}
@@ -41,7 +41,7 @@ const HobbiesList = ({
           onChange={(e) => setHobby({ ...hobby, date: e.target.value })}
         />
         <Button
-          className="hobby-list__column-button"
+          className="hobby-list__hobbiesForm-button"
           showPlus
           onClick={handleAddHobby}
         >

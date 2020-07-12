@@ -1,0 +1,11 @@
+.hobby-list {
+  &__hobbiesForm {
+    &-inputs {
+      padding: 1rem;
+      display: flex;
+    }
+    &-button {
+      margin-left: 1rem;
+    }
+  }
+}

@@ -26,15 +26,15 @@ const UsersList = ({
   style = {},
 }: UsersListInterface) => {
   return (
-    <div className={`hobby-list__column ${className}`} style={style}>
-      <span className="hobby-list__column-buttonContainer">
+    <div className={`hobby-list__userForm ${className}`} style={style}>
+      <span className="hobby-list__userForm-input">
         <TextInput
           placeholder="Enter username"
           value={inputValue}
           onChange={(e) => inputHandler(e.target.value)}
         />
         <Button
-          className="hobby-list__column-button"
+          className="hobby-list__userForm-button"
           onClick={handleAddUser}
           showPlus
           disabled={!inputValue}
@@ -45,7 +45,7 @@ const UsersList = ({
       <div className="hobby-list__users">
         {userList &&
           userList.map((_user: UserInterface, _i) => (
-            <span
+            <button
               key={`${_user.name}${_i}`}
               className={`hobby-list__users-listing ${
                 activeUser.id === _user.id
@@ -55,7 +55,7 @@ const UsersList = ({
               onClick={() => setActiveUser(_user)}
             >
               {_user.name}
-            </span>
+            </button>
           ))}
       </div>
     </div>

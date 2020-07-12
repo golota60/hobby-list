@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+.hobby-list {
+  &__userHobbies {
+    &-hobby {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px $color-black solid;
+      padding: 1rem;
+      &-listing {
+        font-size: 1.6rem;
+        margin: 0;
+      }
+    }
+  }
+}
