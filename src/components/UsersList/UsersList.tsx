@@ -29,8 +29,9 @@ const UsersList = ({
   return (
     <>
     <div className={`hobby-list__userForm ${className}`} style={style}>
-      <span className="hobby-list__userForm-input">
+      <span className="hobby-list__userForm-form">
         <TextInput
+          className="hobby-list__userForm-input"
           placeholder="Enter username"
           value={inputValue}
           onChange={(e) => inputHandler(e.target.value)}

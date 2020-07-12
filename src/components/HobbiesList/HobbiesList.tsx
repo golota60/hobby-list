@@ -45,6 +45,7 @@ const HobbiesList = ({
           onChange={(e) => setHobby({ ...hobby, name: e.target.value })}
         />
         <TextInput
+          className="hobby-list__hobbiesForm-inputs-date"
           placeholder="Enter year"
           value={hobby.date}
           onChange={(e) => setHobby({ ...hobby, date: e.target.value })}

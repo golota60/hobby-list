@@ -7,12 +7,22 @@
     &-inputs {
       padding: 1rem;
       display: flex;
+      flex-wrap: wrap;
       position: sticky;
       top: 0;
       background-color: $color-light-gray;
+      &-date {
+        width: 7.5rem;
+      }
+      
+    @media(max-width: $size-md) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
     }
     &-button {
-      margin-left: 1rem;
+      margin: 0.5rem;
     }
   }
 }

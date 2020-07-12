@@ -6,16 +6,22 @@
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
-    &-input {
+    &-form {
       padding: 1rem;
       display: flex;
+      flex-wrap: wrap;
       position: sticky;
       top: 0;
       background-color: $color-light-gray;
       z-index: 1;
     }
+    &-input {
+      @media(max-width: $size-sm) {
+        width: 6.5rem;
+      }
+    }
     &-button {
-      margin-left: 1rem;
+      margin: 0.5rem;
     }
   }
   &__users {
