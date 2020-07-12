@@ -1,4 +1,4 @@
-import takeLatest  from 'redux-saga';
+import takeLatest from 'redux-saga';
 import { USERS_LOAD, ReduxStoreInterface, USER_ADD } from '../constants';
 import { select, call, put, takeEvery } from 'redux-saga/effects';
 import { fetchUsers, addUser } from '../api/userApi';
@@ -9,7 +9,7 @@ export function* handleUsersLoad() {
   try {
     const users = yield call(fetchUsers);
     yield put(allActions.userActions.setUsers(users));
-  } catch(err) {
+  } catch (err) {
     console.error(err);
     yield put(allActions.userActions.setError(err.toString()));
   } finally {
@@ -19,12 +19,11 @@ export function* handleUsersLoad() {
 export function* handleAddUser(action: ReducerProps<UserInterface>) {
   try {
     yield call(() => addUser(action.payload));
-    const users = yield call(fetchUsers);    
+    const users = yield call(fetchUsers);
     yield put(allActions.userActions.setUsers(users));
-  } catch(err) {
+  } catch (err) {
     console.error(err);
     yield put(allActions.userActions.setError(err.toString()));
-
   }
 }
 

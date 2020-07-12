@@ -1,6 +1,6 @@
-import React from "react";
-import "./HobbyListing.scss";
-import { HobbyInterface } from "../UserHobbyList/UserHobbyList";
+import React from 'react';
+import './HobbyListing.scss';
+import { HobbyInterface } from '../UserHobbyList/UserHobbyList';
 
 interface HobbyListingInterface {
   hobby: HobbyInterface;

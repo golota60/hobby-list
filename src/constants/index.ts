@@ -1,4 +1,4 @@
-import { UserInterface } from "../components/UserHobbyList/UserHobbyList";
+import { UserInterface } from '../components/UserHobbyList/UserHobbyList';
 
 export const USERS_LOAD = 'USERS_LOAD';
 export const USERS_LOAD_SUCCESS = 'USERS_LOAD_SUCCESS';
@@ -18,5 +18,5 @@ export interface ReduxStoreInterface {
     isLoading: boolean;
     error: string;
     users: Array<UserInterface>;
-  }
+  };
 }

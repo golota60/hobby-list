@@ -1,9 +1,9 @@
-import React from "react";
-import "./HobbiesList.scss";
-import { UserInterface, HobbyInterface } from "../UserHobbyList/UserHobbyList";
-import Button from "../common/Button/Button";
-import HobbyListing from "../HobbyListing/HobbyListing";
-import TextInput from "../common/TextInput/TextInput";
+import React from 'react';
+import './HobbiesList.scss';
+import { UserInterface, HobbyInterface } from '../UserHobbyList/UserHobbyList';
+import Button from '../common/Button/Button';
+import HobbyListing from '../HobbyListing/HobbyListing';
+import TextInput from '../common/TextInput/TextInput';
 
 interface HobbiesListInterface {
   user: UserInterface;
@@ -17,7 +17,7 @@ interface HobbiesListInterface {
 const HobbiesList = ({
   user,
   handleAddHobby,
-  className = "",
+  className = '',
   style = {},
   hobby,
   setHobby,

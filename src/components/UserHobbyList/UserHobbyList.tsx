@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import "./UserHobbyList.scss";
-import allActions from "../../actions";
-import { useSelector, useDispatch } from "react-redux";
-import { ReduxStoreInterface } from "../../constants";
-import HobbiesList from "../HobbiesList/HobbiesList";
-import UsersList from "../UsersList/UsersList";
+import React, { useState, useRef, useEffect } from 'react';
+import './UserHobbyList.scss';
+import allActions from '../../actions';
+import { useSelector, useDispatch } from 'react-redux';
+import { ReduxStoreInterface } from '../../constants';
+import HobbiesList from '../HobbiesList/HobbiesList';
+import UsersList from '../UsersList/UsersList';
 
 export interface HobbyInterface {
   passion: string;
@@ -21,14 +21,16 @@ export interface UserInterface {
 const UserHobbyList = () => {
   const componentRef = useRef(null);
   const users = useSelector((state: ReduxStoreInterface) => state.users.users);
-  const isLoading = useSelector((state: ReduxStoreInterface) => state.users.isLoading);
+  const isLoading = useSelector(
+    (state: ReduxStoreInterface) => state.users.isLoading,
+  );
   const dispatch = useDispatch();
   const [userShown, setUserShown] = useState({} as UserInterface);
-  const [userToAdd, setUserToAdd] = useState("");
+  const [userToAdd, setUserToAdd] = useState('');
   const [hobbyInfo, setHobbyInfo] = useState({
-    name: "",
-    passion: "",
-    date: "",
+    name: '',
+    passion: '',
+    date: '',
   } as HobbyInterface);
 
   useEffect(() => {
@@ -43,7 +45,7 @@ const UserHobbyList = () => {
         id: 0, //id is generated on the mocked server when 0 is passed
         name: userToAdd,
         hobbies: [],
-      })
+      }),
     );
   };
 

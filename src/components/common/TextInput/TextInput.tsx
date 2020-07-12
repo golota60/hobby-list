@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import './TextInput.scss';
 
 interface TextInputProps {
@@ -9,8 +9,8 @@ interface TextInputProps {
 }
 
 const TextInput = ({
-  className = "",
-  placeholder = "",
+  className = '',
+  placeholder = '',
   onChange,
   value,
 }: TextInputProps) => {

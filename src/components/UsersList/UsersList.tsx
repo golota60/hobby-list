@@ -1,4 +1,4 @@
-import React, { Ref, RefObject } from 'react'
+import React, { Ref, RefObject } from 'react';
 import './UsersList.scss';
 import TextInput from '../common/TextInput/TextInput';
 import Button from '../common/Button/Button';
@@ -15,7 +15,16 @@ interface UsersListInterface {
   style?: {};
 }
 
-const UsersList = ({inputValue, inputHandler, handleAddUser, userList, activeUser, setActiveUser, className = '', style = {}}: UsersListInterface) => {
+const UsersList = ({
+  inputValue,
+  inputHandler,
+  handleAddUser,
+  userList,
+  activeUser,
+  setActiveUser,
+  className = '',
+  style = {},
+}: UsersListInterface) => {
   return (
     <div className={`hobby-list__column ${className}`} style={style}>
       <span className="hobby-list__column-buttonContainer">
@@ -40,8 +49,8 @@ const UsersList = ({inputValue, inputHandler, handleAddUser, userList, activeUse
               key={`${_user.name}${_i}`}
               className={`hobby-list__users-listing ${
                 activeUser.id === _user.id
-                  ? "hobby-list__users-listing-active"
-                  : ""
+                  ? 'hobby-list__users-listing-active'
+                  : ''
               }`}
               onClick={() => setActiveUser(_user)}
             >
@@ -50,7 +59,7 @@ const UsersList = ({inputValue, inputHandler, handleAddUser, userList, activeUse
           ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default UsersList
+export default UsersList;
