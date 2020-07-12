@@ -3,13 +3,30 @@
 .hobby-list {
   &__userHobbies {
     &-hobby {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px $color-black solid;
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+      border-bottom: 1px $color-light-gray solid;
       padding: 1rem;
+      &:hover {
+        background-color: $color-listing-hover;
+      }
+      .listing-passion {
+        text-align: left;
+      }
+      .listing-name {
+        text-align: center;
+        font-size: 1.4rem;
+      }
+      .listing-date {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: right;
+        font-size: 1.4rem;
+      }
       &-listing {
-        font-size: 1.6rem;
         margin: 0;
+        font-size: 1.4rem;
       }
     }
   }

@@ -5,9 +5,14 @@
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    overflow-x: hidden;
     &-input {
       padding: 1rem;
       display: flex;
+      position: sticky;
+      top: 0;
+      background-color: $color-light-gray;
+      z-index: 1;
     }
     &-button {
       margin-left: 1rem;
@@ -17,20 +22,23 @@
     display: flex;
     flex-direction: column;
     &-listing {
+      border: none;
+      border-bottom: 1px $color-light-gray solid;
       font-size: 1.6rem;
       padding: 1rem;
       cursor: pointer;
-      border-bottom: 1px $color-black solid;
       background-color: $color-white;
-      border: none;
+      &:focus {
+        outline: none;
+        background-color: $color-listing-hover;
+        z-index: 0;
+      }
       &:hover {
         background-color: $color-listing-hover;
       }
       &-active {
         background-color: $color-listing-active;
-        border: $color-listing-border 2px solid;
-        margin-left: -2px;
-        margin-top: -2px;
+        border: $color-listing-border 1px solid;
         border-radius: 0.5rem;
         &:hover {
           background-color: $color-listing-active;

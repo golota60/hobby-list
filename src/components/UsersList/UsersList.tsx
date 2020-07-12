@@ -1,16 +1,17 @@
-import React, { Ref, RefObject } from 'react';
+import React, { Ref, RefObject, useState } from 'react';
 import './UsersList.scss';
 import TextInput from '../common/TextInput/TextInput';
 import Button from '../common/Button/Button';
 import { UserInterface } from '../UserHobbyList/UserHobbyList';
+import ConfirmationModal from '../common/ConfirmationModal/ConfirmationModal';
 
 interface UsersListInterface {
   inputValue: any;
   inputHandler: (e: any) => void;
   handleAddUser: () => void;
   userList: Array<UserInterface>;
-  activeUser: UserInterface;
-  setActiveUser: (e: UserInterface) => void;
+  selectedUser: UserInterface;
+  setSelectedUser: (e: UserInterface) => void;
   className?: string;
   style?: {};
 }
@@ -20,12 +21,13 @@ const UsersList = ({
   inputHandler,
   handleAddUser,
   userList,
-  activeUser,
-  setActiveUser,
+  selectedUser,
+  setSelectedUser,
   className = '',
   style = {},
 }: UsersListInterface) => {
   return (
+    <>
     <div className={`hobby-list__userForm ${className}`} style={style}>
       <span className="hobby-list__userForm-input">
         <TextInput
@@ -48,17 +50,18 @@ const UsersList = ({
             <button
               key={`${_user.name}${_i}`}
               className={`hobby-list__users-listing ${
-                activeUser.id === _user.id
+                selectedUser.id === _user.id
                   ? 'hobby-list__users-listing-active'
                   : ''
               }`}
-              onClick={() => setActiveUser(_user)}
+              onClick={() => setSelectedUser(_user)}
             >
               {_user.name}
             </button>
           ))}
       </div>
     </div>
+    </>
   );
 };
 

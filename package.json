@@ -16,8 +16,8 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html -d build",
-    "mock-server": "yarn run json-server --watch db.json",
-    "all": "yarn run start && yarn run mock-server",
+    "mock-server": "yarn run json-server --no-cors --delay 500 --watch db.json",
+    "all": "yarn run concurrently \"yarn run mock-server\" \"yarn run start\"",
     "purge": "rm -rf node_modules && rm -rf .cache && rm -rf dist"
   },
   "devDependencies": {
@@ -25,6 +25,7 @@
     "@types/react-dom": "^16.9.7",
     "@types/react-redux": "^7.1.9",
     "@types/react-resizable": "^1.7.2",
+    "concurrently": "^5.2.0",
     "json-server": "^0.16.1",
     "parcel-bundler": "^1.12.2",
     "sass": "^1.26.2",

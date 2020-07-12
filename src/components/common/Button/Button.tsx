@@ -21,12 +21,12 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={`${className} button button-${type}`}
+      className={`${className} ${disabled ? 'button-disabled' : ''} button button-${type}`}
       onClick={onClick}
       disabled={disabled}
     >
       {children}
-      {showPlus && <img src={circle} className="button-plus" />}
+      {showPlus && <img src={circle} className={`button-plus ${disabled ? 'button-plus-disabled' : ''}`} />}
     </button>
   );
 };

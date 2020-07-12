@@ -1,9 +1,21 @@
-$color-blue: rgb(86, 142, 255, 0.7);
-$color-dark-blue: rgb(86, 142, 255, 1);
-$color-black: #000000;
-$color-light-gray: #e4e4e4;
-$color-white: #ffffff;
+$color-blue: rgb(24, 144, 255, 0.7);
+$color-dark-blue: rgb(24, 144, 255, 1);
+$color-black: rgb(0, 0, 0);
+$color-gray: rgb(155, 155, 155);
+$color-light-gray: rgba(231, 231, 231, 0.7);
+$color-white: rgb(255, 255, 255);
 
-$color-listing-hover: rgba(86, 142, 255, 0.2);
-$color-listing-active: rgba(86, 142, 255, 0.6);
+$color-listing-hover: rgb(24, 144, 255, 0.4);
+$color-listing-active: rgba(24, 144, 255,0.8);
 $color-listing-border: rgb(29, 102, 248);
+
+$modal-background: rgb(0, 0, 0, 0.85);
+$color-button-active: rgb(24, 144, 255, 1);
+$color-button-disabled: rgb(0, 102, 197);
+$color-button-outline: rgb(0, 109, 211);
+
+//breakpoints
+$size-xl: 1366px;
+$size-lg: 991px;
+$size-md: 768px;
+$size-sm: 576px;

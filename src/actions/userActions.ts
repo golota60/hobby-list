@@ -3,11 +3,14 @@ import {
   USERS_LOAD_SUCCESS,
   USERS_LOAD_FAILED,
   USER_ADD,
-  HOBBY_ADD,
+  UPDATE_USER,
   USER_ADD_SUCCESS,
   USER_ADD_FAILED,
-  HOBBY_ADD_SUCCESS,
-  HOBBY_ADD_FAILED,
+  UPDATE_USER_SUCCESS,
+  UPDATE_USER_FAILED,
+  DELETE_USER,
+  DELETE_USER_SUCCESS,
+  DELETE_USER_FAILED,
 } from '../constants';
 import {
   UserInterface,
@@ -15,28 +18,17 @@ import {
 } from '../components/UserHobbyList/UserHobbyList';
 
 const loadUsers = () => ({
-  type: USERS_LOAD,
-  payload: {
-    users: [],
-    isLoading: true,
-  },
+  type: USERS_LOAD
 });
 
 const setUsers = (users: Array<UserInterface> = []) => ({
   type: USERS_LOAD_SUCCESS,
-  payload: {
-    users: users,
-    isLoading: false,
-  },
+  payload: users,
 });
 
-const setError = (error: any) => ({
+const setUsersFailed = (error: string) => ({
   type: USERS_LOAD_FAILED,
-  payload: {
-    users: [],
-    error: error,
-    isLoading: false,
-  },
+  payload: error,
 });
 
 const addUser = (user: UserInterface) => ({
@@ -48,30 +40,50 @@ const addUserSuccess = () => ({
   type: USER_ADD_SUCCESS,
 });
 
-const addUserFailed = () => ({
+const addUserFailed = (error: string) => ({
   type: USER_ADD_FAILED,
+  payload: error
 });
 
-const addHobby = (user: UserInterface, hobby: HobbyInterface) => ({
-  type: HOBBY_ADD,
+const updateUser = (user: UserInterface) => ({
+  type: UPDATE_USER,
+  payload: user
 });
 
-const addHobbySuccess = () => ({
-  type: HOBBY_ADD_SUCCESS,
+const updateUserSuccess = () => ({
+  type: UPDATE_USER_SUCCESS,
 });
 
-const addHobbyFailed = () => ({
-  type: HOBBY_ADD_FAILED,
+const updateUserFailed = (error: string) => ({
+  type: UPDATE_USER_FAILED,
+  payload: error,
 });
+
+const deleteUser = (user: UserInterface) => ({
+  type: DELETE_USER,
+  payload: user
+})
+
+const deleteUserSuccess = () => ({
+  type: DELETE_USER_SUCCESS
+})
+
+const deleteUserFailed = (error: string) => ({
+  type: DELETE_USER_FAILED,
+  error: error
+})
 
 export default {
   loadUsers,
   setUsers,
-  setError,
+  setUsersFailed,
   addUser,
   addUserSuccess,
   addUserFailed,
-  addHobby,
-  addHobbySuccess,
-  addHobbyFailed,
+  updateUser,
+  updateUserSuccess,
+  updateUserFailed,
+  deleteUser,
+  deleteUserSuccess,
+  deleteUserFailed,
 };
