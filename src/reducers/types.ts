@@ -1,4 +1,4 @@
-interface ReducerProps {
+interface ReducerProps<T> {
   type: string,
-  payload: any
+  payload: T
 }

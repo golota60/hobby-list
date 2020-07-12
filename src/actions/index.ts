@@ -1,7 +1,7 @@
-import ageActions from './ageActions';
+import userActions from './userActions';
 
 const allActions = {
-  ageActions
+  userActions: userActions
 }
 
 export default allActions;

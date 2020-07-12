@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { ageReducer } from "./ageReducer";
+import { hobbyReducer } from "./hobbyReducer";
 
 const rootReducer = combineReducers({
-  age: ageReducer
+  users: hobbyReducer,
 })
 
 export default rootReducer;

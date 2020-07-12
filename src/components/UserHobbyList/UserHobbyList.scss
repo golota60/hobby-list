@@ -1,0 +1,71 @@
+.hobby-list {
+  width: 100%;
+  border: 1px solid black;
+  background-color: whitesmoke;
+
+  &__title {
+    font-size: 2.5rem;
+    padding-left: 2rem;
+    padding: 1.6rem;
+  }
+
+  &__content {
+    border-top: 1px black solid;
+    display: grid;
+    grid-template-columns: 33% 67%;
+    grid-template-rows: 30rem;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    &-buttonContainer {
+      padding: 1rem;
+      display: flex;
+    }
+    &-button {
+      margin-left: 1rem;
+    }
+  }
+
+  &__users {
+    display: flex;
+    flex-direction: column;
+    &-listing {
+      font-size: 1.6rem;
+      padding: 1rem;
+      cursor: pointer;
+      border-bottom: 1px black solid;
+      &:hover {
+        background-color: rgba(86, 142, 255, 0.2);
+      }
+      &-active {
+        background-color: rgba(86, 142, 255, 0.6);
+        border: rgb(29, 102, 248) 2px solid;
+        margin-left: -2px;
+        margin-top: -2px;
+        border-radius: 0.5rem;
+        &:hover {
+          background-color: rgba(86, 142, 255, 0.6);
+        }
+      }
+    }
+  }
+
+  &__userHobbies {
+    display: flex;
+    flex-direction: column;
+    &-hobby {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px black solid;
+      padding: 1rem;
+      &-listing {
+        font-size: 1.6rem;
+        margin: 0;
+      }
+    }
+  }
+  
+}
